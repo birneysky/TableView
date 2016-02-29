@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LCSectionHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLJ-Bj-DdS">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFY-Vh-aHu">
+                            <rect key="frame" x="8" y="7" width="34" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="34" id="Uqk-Xw-MZf"/>
+                                <constraint firstAttribute="height" constant="34" id="h5c-44-soX"/>
+                            </constraints>
+                            <state key="normal" image="carat"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkr-bz-mOz">
+                            <rect key="frame" x="50" y="13" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="bkr-bz-mOz" firstAttribute="top" secondItem="YLJ-Bj-DdS" secondAttribute="top" constant="13" id="12l-oy-nou"/>
+                        <constraint firstItem="RFY-Vh-aHu" firstAttribute="leading" secondItem="YLJ-Bj-DdS" secondAttribute="leading" constant="8" id="1Gn-bL-yqh"/>
+                        <constraint firstItem="bkr-bz-mOz" firstAttribute="leading" secondItem="RFY-Vh-aHu" secondAttribute="trailing" constant="8" id="cNO-7s-Uzn"/>
+                        <constraint firstItem="RFY-Vh-aHu" firstAttribute="top" secondItem="YLJ-Bj-DdS" secondAttribute="top" constant="7" id="jHu-e4-cBM"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="YLJ-Bj-DdS" secondAttribute="trailing" id="V6u-L5-O3u"/>
+                <constraint firstItem="YLJ-Bj-DdS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hCd-rS-cUZ"/>
+                <constraint firstItem="YLJ-Bj-DdS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pDG-vw-u26"/>
+                <constraint firstAttribute="bottom" secondItem="YLJ-Bj-DdS" secondAttribute="bottom" id="u34-e1-Eib"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="disclosureButton" destination="RFY-Vh-aHu" id="PtM-Nh-AHO"/>
+                <outlet property="titleLabel" destination="bkr-bz-mOz" id="V0o-Pw-Dw9"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="carat" width="11" height="11"/>
+    </resources>
+</document>

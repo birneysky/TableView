@@ -19,6 +19,9 @@
 		DB3981ED1C841D59001DDD65 /* LCQuotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981EC1C841D59001DDD65 /* LCQuotation.m */; };
 		DB3981F01C841ED2001DDD65 /* LCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981EF1C841ED2001DDD65 /* LCTableViewController.m */; };
 		DB3981F21C842495001DDD65 /* PlaysAndQuotations.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB3981F11C842495001DDD65 /* PlaysAndQuotations.plist */; };
+		DB3981F51C842D9E001DDD65 /* LCSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981F41C842D9E001DDD65 /* LCSectionHeaderView.m */; };
+		DB3981F71C842DCC001DDD65 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB3981F61C842DCC001DDD65 /* SectionHeaderView.xib */; };
+		DB3981FA1C8434C1001DDD65 /* LCSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981F91C8434C1001DDD65 /* LCSectionInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,11 @@
 		DB3981EE1C841ED2001DDD65 /* LCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTableViewController.h; sourceTree = "<group>"; };
 		DB3981EF1C841ED2001DDD65 /* LCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTableViewController.m; sourceTree = "<group>"; };
 		DB3981F11C842495001DDD65 /* PlaysAndQuotations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaysAndQuotations.plist; sourceTree = "<group>"; };
+		DB3981F31C842D9E001DDD65 /* LCSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSectionHeaderView.h; sourceTree = "<group>"; };
+		DB3981F41C842D9E001DDD65 /* LCSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSectionHeaderView.m; sourceTree = "<group>"; };
+		DB3981F61C842DCC001DDD65 /* SectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SectionHeaderView.xib; path = Cells/SectionHeaderView.xib; sourceTree = SOURCE_ROOT; };
+		DB3981F81C8434C1001DDD65 /* LCSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSectionInfo.h; sourceTree = "<group>"; };
+		DB3981F91C8434C1001DDD65 /* LCSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSectionInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +165,9 @@
 		DB3981E51C841C8C001DDD65 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				DB3981F31C842D9E001DDD65 /* LCSectionHeaderView.h */,
+				DB3981F41C842D9E001DDD65 /* LCSectionHeaderView.m */,
+				DB3981F61C842DCC001DDD65 /* SectionHeaderView.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -178,6 +189,8 @@
 				DB3981E91C841CFE001DDD65 /* LCPlay.m */,
 				DB3981EB1C841D59001DDD65 /* LCQuotation.h */,
 				DB3981EC1C841D59001DDD65 /* LCQuotation.m */,
+				DB3981F81C8434C1001DDD65 /* LCSectionInfo.h */,
+				DB3981F91C8434C1001DDD65 /* LCSectionInfo.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -287,6 +300,7 @@
 			files = (
 				DB3981C21C84156C001DDD65 /* LaunchScreen.storyboard in Resources */,
 				DB3981F21C842495001DDD65 /* PlaysAndQuotations.plist in Resources */,
+				DB3981F71C842DCC001DDD65 /* SectionHeaderView.xib in Resources */,
 				DB3981BF1C84156C001DDD65 /* Assets.xcassets in Resources */,
 				DB3981BD1C84156C001DDD65 /* Main.storyboard in Resources */,
 			);
@@ -315,8 +329,10 @@
 			files = (
 				DB3981F01C841ED2001DDD65 /* LCTableViewController.m in Sources */,
 				DB3981EA1C841CFE001DDD65 /* LCPlay.m in Sources */,
+				DB3981FA1C8434C1001DDD65 /* LCSectionInfo.m in Sources */,
 				DB3981BA1C84156C001DDD65 /* ViewController.m in Sources */,
 				DB3981B71C84156C001DDD65 /* AppDelegate.m in Sources */,
+				DB3981F51C842D9E001DDD65 /* LCSectionHeaderView.m in Sources */,
 				DB3981B41C84156C001DDD65 /* main.m in Sources */,
 				DB3981ED1C841D59001DDD65 /* LCQuotation.m in Sources */,
 			);

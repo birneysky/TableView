@@ -10,13 +10,27 @@
 #import "LCPlay.h"
 #import "LCQuotation.h"
 
+
+
 @interface LCTableViewController ()
 
 @property (nonatomic,strong) NSMutableArray* plays;
 
+@property (nonatomic,strong) NSMutableArray* sectionInfoArray;
+
 @end
 
+#pragma mark - *** Static Var ***
+static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
+
+#pragma mark - *** MACROS ***
+#define DEFAULT_ROW_HEIGHT 88
+#define HEADER_HEIGHT 48
+
 @implementation LCTableViewController
+
+
+
 
 #pragma mark - *** Properties ***
 -(NSMutableArray*)plays
@@ -52,11 +66,22 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UINib* nib = [UINib nibWithNibName:@"SectionHeaderView" bundle:nil];
+    [self.tableView registerNib:nib forHeaderFooterViewReuseIdentifier:SectionHeaderViewIdentifier];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (self.sectionInfoArray == nil ||
+        self.sectionInfoArray.count != [self numberOfSectionsInTableView:self.tableView]) {
+        NSMutableArray* infoArray = [[NSMutableArray alloc] init];
+        for (LCPlay* play in self.plays) {
+            
+        }
+    }
 }
 
 #pragma mark - Table view data source
