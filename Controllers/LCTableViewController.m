@@ -32,8 +32,6 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
 @implementation LCTableViewController
 
 
-
-
 #pragma mark - *** Properties ***
 -(NSMutableArray*)plays
 {

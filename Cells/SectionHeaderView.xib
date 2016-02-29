@@ -21,6 +21,9 @@
                                 <constraint firstAttribute="height" constant="34" id="h5c-44-soX"/>
                             </constraints>
                             <state key="normal" image="carat"/>
+                            <connections>
+                                <action selector="toggleOpen:" destination="iN0-l3-epB" eventType="touchUpInside" id="86z-3z-Kyh"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkr-bz-mOz">
                             <rect key="frame" x="50" y="13" width="42" height="21"/>
