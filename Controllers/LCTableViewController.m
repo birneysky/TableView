@@ -9,7 +9,9 @@
 #import "LCTableViewController.h"
 #import "LCPlay.h"
 #import "LCQuotation.h"
-
+#import "LCSectionInfo.h"
+#import "LCQuoteCell.h"
+#import "LCSectionHeaderView.h"
 
 
 @interface LCTableViewController ()
@@ -50,6 +52,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
                 [quotations addObject:quotation];
             }
             play.quotations = quotations;
+            [_plays addObject:play];
         }
     }
     
@@ -66,7 +69,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    self.tableView.sectionHeaderHeight = 48;
     UINib* nib = [UINib nibWithNibName:@"SectionHeaderView" bundle:nil];
     [self.tableView registerNib:nib forHeaderFooterViewReuseIdentifier:SectionHeaderViewIdentifier];
 }
@@ -79,32 +82,58 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
         self.sectionInfoArray.count != [self numberOfSectionsInTableView:self.tableView]) {
         NSMutableArray* infoArray = [[NSMutableArray alloc] init];
         for (LCPlay* play in self.plays) {
+            LCSectionInfo* sectionInfo = [[LCSectionInfo alloc] init];
+            sectionInfo.play = play;
+            sectionInfo.open = NO;
             
+            NSNumber* defaultRowHeight = @(DEFAULT_ROW_HEIGHT);
+            NSUInteger countOfQuotations = sectionInfo.play.quotations.count;
+            for (int i = 0; i < countOfQuotations; i++) {
+                [sectionInfo insertObject:defaultRowHeight inRowHeightsAtIndex:i];
+            }
+            [infoArray addObject:sectionInfo];
         }
+        self.sectionInfoArray = infoArray;
     }
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return self.sectionInfoArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    LCSectionInfo* sectionInfo = [self.sectionInfoArray objectAtIndex:section];
+    NSInteger countOfQuotations = [sectionInfo.play.quotations count];
+    return sectionInfo.isOpen ? countOfQuotations : 0;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    static NSString* quoteCellIdentifier = @"QuoteCellIdentifier";
+    
+    LCQuoteCell *cell = [tableView dequeueReusableCellWithIdentifier:quoteCellIdentifier forIndexPath:indexPath];
+    
+    LCPlay* player = [self.sectionInfoArray objectAtIndex:indexPath.section];
+    
+    cell.quotation = player.quotations[indexPath.row];
     
     return cell;
 }
-*/
+
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    LCSectionHeaderView* sectionView = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:SectionHeaderViewIdentifier];
+    
+    LCSectionInfo* sectionInfo = self.sectionInfoArray[section];
+    
+    sectionView.titleLabel.text = sectionInfo.play.name;
+    
+    return sectionView;
+}
+
 
 /*
 // Override to support conditional editing of the table view.

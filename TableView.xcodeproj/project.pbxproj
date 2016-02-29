@@ -22,6 +22,7 @@
 		DB3981F51C842D9E001DDD65 /* LCSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981F41C842D9E001DDD65 /* LCSectionHeaderView.m */; };
 		DB3981F71C842DCC001DDD65 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB3981F61C842DCC001DDD65 /* SectionHeaderView.xib */; };
 		DB3981FA1C8434C1001DDD65 /* LCSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981F91C8434C1001DDD65 /* LCSectionInfo.m */; };
+		DB3981FD1C8441D8001DDD65 /* LCQuoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981FC1C8441D8001DDD65 /* LCQuoteCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		DB3981F61C842DCC001DDD65 /* SectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SectionHeaderView.xib; path = Cells/SectionHeaderView.xib; sourceTree = SOURCE_ROOT; };
 		DB3981F81C8434C1001DDD65 /* LCSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSectionInfo.h; sourceTree = "<group>"; };
 		DB3981F91C8434C1001DDD65 /* LCSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSectionInfo.m; sourceTree = "<group>"; };
+		DB3981FB1C8441D8001DDD65 /* LCQuoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCQuoteCell.h; sourceTree = "<group>"; };
+		DB3981FC1C8441D8001DDD65 /* LCQuoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCQuoteCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +171,8 @@
 				DB3981F31C842D9E001DDD65 /* LCSectionHeaderView.h */,
 				DB3981F41C842D9E001DDD65 /* LCSectionHeaderView.m */,
 				DB3981F61C842DCC001DDD65 /* SectionHeaderView.xib */,
+				DB3981FB1C8441D8001DDD65 /* LCQuoteCell.h */,
+				DB3981FC1C8441D8001DDD65 /* LCQuoteCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB3981FD1C8441D8001DDD65 /* LCQuoteCell.m in Sources */,
 				DB3981F01C841ED2001DDD65 /* LCTableViewController.m in Sources */,
 				DB3981EA1C841CFE001DDD65 /* LCPlay.m in Sources */,
 				DB3981FA1C8434C1001DDD65 /* LCSectionInfo.m in Sources */,
