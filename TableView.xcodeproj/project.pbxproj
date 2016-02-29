@@ -16,8 +16,9 @@
 		DB3981CD1C84156C001DDD65 /* TableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981CC1C84156C001DDD65 /* TableViewTests.m */; };
 		DB3981D81C84156C001DDD65 /* TableViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981D71C84156C001DDD65 /* TableViewUITests.m */; };
 		DB3981EA1C841CFE001DDD65 /* LCPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981E91C841CFE001DDD65 /* LCPlay.m */; };
-		DB3981ED1C841D59001DDD65 /* APLQuotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981EC1C841D59001DDD65 /* APLQuotation.m */; };
+		DB3981ED1C841D59001DDD65 /* LCQuotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981EC1C841D59001DDD65 /* LCQuotation.m */; };
 		DB3981F01C841ED2001DDD65 /* LCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981EF1C841ED2001DDD65 /* LCTableViewController.m */; };
+		DB3981F21C842495001DDD65 /* PlaysAndQuotations.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB3981F11C842495001DDD65 /* PlaysAndQuotations.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +57,11 @@
 		DB3981D91C84156C001DDD65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB3981E81C841CFE001DDD65 /* LCPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPlay.h; sourceTree = "<group>"; };
 		DB3981E91C841CFE001DDD65 /* LCPlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPlay.m; sourceTree = "<group>"; };
-		DB3981EB1C841D59001DDD65 /* APLQuotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLQuotation.h; sourceTree = "<group>"; };
-		DB3981EC1C841D59001DDD65 /* APLQuotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLQuotation.m; sourceTree = "<group>"; };
+		DB3981EB1C841D59001DDD65 /* LCQuotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCQuotation.h; sourceTree = "<group>"; };
+		DB3981EC1C841D59001DDD65 /* LCQuotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCQuotation.m; sourceTree = "<group>"; };
 		DB3981EE1C841ED2001DDD65 /* LCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTableViewController.h; sourceTree = "<group>"; };
 		DB3981EF1C841ED2001DDD65 /* LCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTableViewController.m; sourceTree = "<group>"; };
+		DB3981F11C842495001DDD65 /* PlaysAndQuotations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaysAndQuotations.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,10 +173,11 @@
 		DB3981E71C841C8C001DDD65 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DB3981F11C842495001DDD65 /* PlaysAndQuotations.plist */,
 				DB3981E81C841CFE001DDD65 /* LCPlay.h */,
 				DB3981E91C841CFE001DDD65 /* LCPlay.m */,
-				DB3981EB1C841D59001DDD65 /* APLQuotation.h */,
-				DB3981EC1C841D59001DDD65 /* APLQuotation.m */,
+				DB3981EB1C841D59001DDD65 /* LCQuotation.h */,
+				DB3981EC1C841D59001DDD65 /* LCQuotation.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB3981C21C84156C001DDD65 /* LaunchScreen.storyboard in Resources */,
+				DB3981F21C842495001DDD65 /* PlaysAndQuotations.plist in Resources */,
 				DB3981BF1C84156C001DDD65 /* Assets.xcassets in Resources */,
 				DB3981BD1C84156C001DDD65 /* Main.storyboard in Resources */,
 			);
@@ -314,7 +318,7 @@
 				DB3981BA1C84156C001DDD65 /* ViewController.m in Sources */,
 				DB3981B71C84156C001DDD65 /* AppDelegate.m in Sources */,
 				DB3981B41C84156C001DDD65 /* main.m in Sources */,
-				DB3981ED1C841D59001DDD65 /* APLQuotation.m in Sources */,
+				DB3981ED1C841D59001DDD65 /* LCQuotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

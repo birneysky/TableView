@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface APLQuotation : NSObject
+@interface LCQuotation : NSObject
 
 @property (nonatomic,strong) NSString* character;
 

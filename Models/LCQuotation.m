@@ -6,8 +6,8 @@
 //  Copyright © 2016年 com.github. All rights reserved.
 //
 
-#import "APLQuotation.h"
+#import "LCQuotation.h"
 
-@implementation APLQuotation
+@implementation LCQuotation
 
 @end

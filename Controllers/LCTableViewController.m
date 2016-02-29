@@ -7,13 +7,43 @@
 //
 
 #import "LCTableViewController.h"
+#import "LCPlay.h"
+#import "LCQuotation.h"
 
 @interface LCTableViewController ()
+
+@property (nonatomic,strong) NSMutableArray* plays;
 
 @end
 
 @implementation LCTableViewController
 
+#pragma mark - *** Properties ***
+-(NSMutableArray*)plays
+{
+    if (!_plays) {
+        NSURL* url = [[NSBundle mainBundle] URLForResource:@"PlaysAndQuotations" withExtension:@"plist"];
+        NSArray* playDictionariesArray = [[NSArray alloc] initWithContentsOfURL:url];
+        _plays = [[NSMutableArray alloc] initWithCapacity:[playDictionariesArray count]];
+        for (NSDictionary* itemDic in playDictionariesArray) {
+            LCPlay* play = [[LCPlay alloc] init];
+            play.name = [itemDic objectForKey:@"playName"];
+            NSArray* quotationsDicArray = [itemDic objectForKey:@"quotations"];
+            NSMutableArray* quotations = [[NSMutableArray alloc] initWithCapacity:[quotationsDicArray count]];
+            for (NSDictionary* quotationDic in quotations) {
+                LCQuotation* quotation = [[LCQuotation alloc] init];
+                [quotation setValuesForKeysWithDictionary:quotationDic];
+                [quotations addObject:quotation];
+            }
+            play.quotations = quotations;
+        }
+    }
+    
+    return _plays;
+}
+
+
+#pragma mark - *** Init View ***
 - (void)viewDidLoad {
     [super viewDidLoad];
     
