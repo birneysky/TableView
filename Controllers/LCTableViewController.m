@@ -22,6 +22,10 @@
 
 @property (nonatomic,assign) NSUInteger openSectionIndex;
 
+@property (nonatomic,strong) NSIndexPath* pinchedIndexPath;
+
+@property (nonatomic,assign) NSUInteger initialPichedHeight;
+
 @end
 
 #pragma mark - *** Static Var ***
@@ -69,6 +73,8 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
 
     self.tableView.sectionHeaderHeight = 48;
     UINib* nib = [UINib nibWithNibName:@"SectionHeaderView" bundle:nil];
@@ -146,7 +152,8 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 88.0f;
+    LCSectionInfo* sectionInfo = self.sectionInfoArray[indexPath.section];
+    return [[sectionInfo objectInRowHeightsAtIndex:indexPath.row] floatValue];
 }
 
 #pragma mark - *** LCSectionHeaderViewDelegate ***
