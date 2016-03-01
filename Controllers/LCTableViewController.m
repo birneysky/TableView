@@ -74,7 +74,8 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    
+    UIPinchGestureRecognizer* pgr = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
+    [self.tableView addGestureRecognizer:pgr];
 
     self.tableView.sectionHeaderHeight = 48;
     UINib* nib = [UINib nibWithNibName:@"SectionHeaderView" bundle:nil];
@@ -224,48 +225,43 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
     self.openSectionIndex = NSNotFound;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+#pragma mark - *** Gesture Selector ***
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)handlePinch:(UIPinchGestureRecognizer*)pgr
+{
+    if (UIGestureRecognizerStateBegan == pgr.state ) {
+        CGPoint location = [pgr locationInView:self.tableView];
+        self.pinchedIndexPath =  [self.tableView indexPathForRowAtPoint:location];
+        
+        LCSectionInfo* sectionInfo = self.sectionInfoArray[self.pinchedIndexPath.section];
+        
+        self.initialPichedHeight = [[sectionInfo objectInRowHeightsAtIndex:self.pinchedIndexPath.row] floatValue];
+        [self updateForPinchScale:pgr.scale atIndexPath:self.pinchedIndexPath];
+    }
+    else if(UIGestureRecognizerStateChanged == pgr.state){
+        [self updateForPinchScale:pgr.scale atIndexPath:self.pinchedIndexPath];
+    }
+    else if(UIGestureRecognizerStateCancelled == pgr.state || UIGestureRecognizerStateEnded == pgr.state)
+    {
+        self.pinchedIndexPath = nil;
+    }
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)updateForPinchScale:(CGFloat)scale atIndexPath:(NSIndexPath*)indexpath
+{
+    if (indexpath && indexpath.section != NSNotFound && indexpath.row != NSNotFound) {
+        CGFloat newHeight = round(MAX(self.initialPichedHeight * scale, DEFAULT_ROW_HEIGHT));
+        
+        LCSectionInfo* sectionInfo = self.sectionInfoArray[indexpath.section];
+        [sectionInfo replaceObjectInRowHeightsAtIndex:indexpath.row withObject:@(newHeight)];
+        
+        
+        BOOL animationEnabled = [UIView areAnimationsEnabled];
+        [UIView setAnimationsEnabled:NO];
+        [self.tableView beginUpdates];
+        [self.tableView endUpdates];
+        [UIView setAnimationsEnabled:animationEnabled];
+    }
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
