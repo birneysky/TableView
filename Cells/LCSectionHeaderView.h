@@ -19,6 +19,8 @@
 
 @property (nonatomic, assign) id<LCSectionHeaderViewDelegate> delegate;
 
+- (void)toggleOpenWithUserAction:(BOOL)userAction;
+
 @end
 
 

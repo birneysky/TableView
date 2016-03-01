@@ -14,11 +14,13 @@
 #import "LCSectionHeaderView.h"
 
 
-@interface LCTableViewController ()
+@interface LCTableViewController () <LCSectionHeaderViewDelegate>
 
 @property (nonatomic,strong) NSMutableArray* plays;
 
 @property (nonatomic,strong) NSMutableArray* sectionInfoArray;
+
+@property (nonatomic,assign) NSUInteger openSectionIndex;
 
 @end
 
@@ -44,7 +46,7 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
             play.name = [itemDic objectForKey:@"playName"];
             NSArray* quotationsDicArray = [itemDic objectForKey:@"quotations"];
             NSMutableArray* quotations = [[NSMutableArray alloc] initWithCapacity:[quotationsDicArray count]];
-            for (NSDictionary* quotationDic in quotations) {
+            for (NSDictionary* quotationDic in quotationsDicArray) {
                 LCQuotation* quotation = [[LCQuotation alloc] init];
                 [quotation setValuesForKeysWithDictionary:quotationDic];
                 [quotations addObject:quotation];
@@ -67,10 +69,13 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
     self.tableView.sectionHeaderHeight = 48;
     UINib* nib = [UINib nibWithNibName:@"SectionHeaderView" bundle:nil];
     [self.tableView registerNib:nib forHeaderFooterViewReuseIdentifier:SectionHeaderViewIdentifier];
+    self.openSectionIndex = NSNotFound;
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -114,9 +119,9 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
     
     LCQuoteCell *cell = [tableView dequeueReusableCellWithIdentifier:quoteCellIdentifier forIndexPath:indexPath];
     
-    LCPlay* player = [self.sectionInfoArray objectAtIndex:indexPath.section];
+    LCSectionInfo* sectionInfo = [self.sectionInfoArray objectAtIndex:indexPath.section];
     
-    cell.quotation = player.quotations[indexPath.row];
+    cell.quotation = sectionInfo.play.quotations[indexPath.row];
     
     return cell;
 }
@@ -129,9 +134,78 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
     
     sectionView.titleLabel.text = sectionInfo.play.name;
     
+    sectionInfo.headerView = sectionView;
+    
+    sectionView.delegate = self;
+    
+    sectionView.section = section;
+    
     return sectionView;
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 88.0f;
+}
+
+#pragma mark - *** LCSectionHeaderViewDelegate ***
+
+- (void)sectionHeaderView:(LCSectionHeaderView *)headview sectionOpened:(NSUInteger)section
+{
+    LCSectionInfo* sectionInfo = self.sectionInfoArray[section];
+    
+    sectionInfo.open = YES;
+    
+    NSUInteger countOfRowsToInsert = [sectionInfo.play.quotations count];
+    NSMutableArray* indexPathsToInsert = [[NSMutableArray alloc] initWithCapacity:countOfRowsToInsert];
+    
+    for (NSUInteger i = 0; i < countOfRowsToInsert; i++) {
+        [indexPathsToInsert addObject:[NSIndexPath indexPathForRow:i inSection:section]];
+    }
+    
+    NSMutableArray* indexPathsToDelete = [[NSMutableArray alloc] init];
+    NSUInteger previousOpenSectionIndex = self.openSectionIndex;
+    if (previousOpenSectionIndex != NSNotFound) {
+        LCSectionInfo* previousSectionInfo = self.sectionInfoArray[previousOpenSectionIndex];
+        previousSectionInfo.open = NO;
+        [previousSectionInfo.headerView toggleOpenWithUserAction:NO];
+        NSUInteger countOfRowsToDelete = [[[self.sectionInfoArray[previousOpenSectionIndex] play] quotations] count];
+        for (NSUInteger i = 0; i < countOfRowsToDelete; i++) {
+            [indexPathsToDelete addObject:[NSIndexPath indexPathForRow:i inSection:previousOpenSectionIndex]];
+        }
+    }
+    
+    
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:indexPathsToInsert withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView endUpdates];
+    
+    self.openSectionIndex = section;
+    
+}
+
+
+- (void)sectionHeaderView:(LCSectionHeaderView *)headview sectionClosed:(NSUInteger)section
+{
+    LCSectionInfo* sectionInfo = self.sectionInfoArray[section];
+    sectionInfo.open = NO;
+    
+    NSUInteger countOfRowsToDelete = [self.tableView numberOfRowsInSection:section];
+    if (countOfRowsToDelete>0) {
+        NSMutableArray* indexPathsToDelete = [[NSMutableArray alloc] initWithCapacity:countOfRowsToDelete];
+        for (int i = 0; i < countOfRowsToDelete; i++) {
+            [indexPathsToDelete addObject:[NSIndexPath indexPathForRow:i inSection:section]];
+        }
+        
+        [self.tableView beginUpdates];
+        [self.tableView deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.tableView endUpdates];
+    }
+
+    self.openSectionIndex = NSNotFound;
+}
 
 /*
 // Override to support conditional editing of the table view.
