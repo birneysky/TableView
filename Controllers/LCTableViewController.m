@@ -285,8 +285,8 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
             //，还要重写canPerformAction：withSender:
             [self becomeFirstResponder];
             CGRect cellRect = [self.tableView rectForRowAtIndexPath:pressedIndexPath];
-            NSString* emailTitle = NSLocalizedString(@"Email", nil);
-            UIMenuItem* menuItem = [[UIMenuItem alloc] initWithTitle:@"email" action:@selector(emailMenuButtonPressed:)];
+            NSString* emailTitle = NSLocalizedString(@"Email", @"Email menu title");
+            UIMenuItem* menuItem = [[UIMenuItem alloc] initWithTitle:emailTitle action:@selector(emailMenuButtonPressed:)];
             UIMenuController* mc = [UIMenuController sharedMenuController];
             mc.menuItems = @[menuItem];
             
