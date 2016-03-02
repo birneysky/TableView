@@ -98,4 +98,41 @@
     [self performTransition:options];
 }
 
+- (IBAction)bounceBtnClicked:(id)sender {
+    
+    UIView* fromView;
+    UIView* toView;
+    if ([self.frontView superview]) {
+        fromView = self.frontView;
+        toView = self.backView;
+    }
+    else{
+        fromView = self.backView;
+        toView = self.frontView;
+    }
+    
+    CGRect startFrame = self.view.frame;
+    startFrame.origin.y = - startFrame.size.height;
+    
+    CGRect endFrame = self.view.frame;
+    endFrame.origin.y = 0;
+    
+    toView.frame = startFrame;
+    [self.view addSubview:toView];
+    NSArray* priorConstrainsts = self.priorConstraints;
+    [UIView animateWithDuration:1.0f
+                          delay:0
+         usingSpringWithDamping:0.5f
+          initialSpringVelocity:5.0
+                        options:0
+                     animations:^{
+                         toView.frame = endFrame;
+                     }
+                     completion:^(BOOL finished) {
+                         [fromView removeFromSuperview];
+                         [self.view removeConstraints:priorConstrainsts];
+                     }
+     ];
+    _priorConstraints = [self constrainSubView:toView toMathSuperView:self.view];
+}
 @end

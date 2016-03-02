@@ -174,7 +174,11 @@
                         <action selector="flipBtnClicked:" destination="mNj-Rm-6fT" id="qI2-i8-Wgw"/>
                     </connections>
                 </barButtonItem>
-                <barButtonItem title="Bounce" id="fy4-Va-qty"/>
+                <barButtonItem title="Bounce" id="fy4-Va-qty">
+                    <connections>
+                        <action selector="bounceBtnClicked:" destination="mNj-Rm-6fT" id="1G6-81-Ko3"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="2645" y="564"/>
         </scene>
