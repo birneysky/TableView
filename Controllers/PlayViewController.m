@@ -19,6 +19,26 @@
 
 @implementation PlayViewController
 
+- (NSArray*)constrainSubView:(UIView*)subview toMathSuperView:(UIView*)superView
+{
+    subview.translatesAutoresizingMaskIntoConstraints = NO;
+    NSDictionary* viewsDictionary = NSDictionaryOfVariableBindings(subview);
+    
+    NSArray* constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[subview]|"
+                                                                   options:0
+                                                                   metrics:nil
+                                                                     views:viewsDictionary];
+    
+    constraints = [constraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[subview]|"
+                                                                                                     options:0
+                                                                                                     metrics:nil
+                                                                                                       views:viewsDictionary]];
+    [superView addConstraints:constraints];
+    
+    return constraints;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -29,14 +49,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
