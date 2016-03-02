@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="1963" y="564"/>
         </scene>
-        <!--View Controller-->
+        <!--Play View Controller-->
         <scene sceneID="yHb-fI-QOb">
             <objects>
-                <viewController id="mNj-Rm-6fT" sceneMemberID="viewController">
+                <viewController id="mNj-Rm-6fT" customClass="PlayViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5H2-7w-4dZ"/>
                         <viewControllerLayoutGuide type="bottom" id="hds-RI-5dd"/>
@@ -147,6 +147,13 @@
                     <navigationItem key="navigationItem" id="e4r-v3-qHx">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="hDq-d9-uNO"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="backView" destination="Ole-EP-aIN" id="tvt-i7-eVH"/>
+                        <outlet property="bounceButton" destination="Fbp-IT-TyO" id="zRP-uQ-fZL"/>
+                        <outlet property="fadeButton" destination="8ld-eN-pfg" id="TPJ-ix-2NM"/>
+                        <outlet property="flipButton" destination="Fbp-IT-TyO" id="t8g-xN-hHc"/>
+                        <outlet property="frontView" destination="gmx-PK-z9O" id="7sw-3d-OlL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLm-h1-40W" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" id="gmx-PK-z9O">
@@ -159,6 +166,7 @@
                 </imageView>
                 <barButtonItem title="Item" id="8ld-eN-pfg"/>
                 <barButtonItem title="Item" id="Fbp-IT-TyO"/>
+                <barButtonItem title="Item" id="fy4-Va-qty"/>
             </objects>
             <point key="canvasLocation" x="2645" y="564"/>
         </scene>

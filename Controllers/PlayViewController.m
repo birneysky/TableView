@@ -9,6 +9,11 @@
 #import "PlayViewController.h"
 
 @interface PlayViewController ()
+@property (strong, nonatomic) IBOutlet UIImageView *frontView;
+@property (strong, nonatomic) IBOutlet UIImageView *backView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *fadeButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *flipButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *bounceButton;
 
 @end
 
