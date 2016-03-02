@@ -262,10 +262,8 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
 {
     if (indexpath && indexpath.section != NSNotFound && indexpath.row != NSNotFound) {
         CGFloat newHeight = round(MAX(self.initialPichedHeight * scale, DEFAULT_ROW_HEIGHT));
-        
         LCSectionInfo* sectionInfo = self.sectionInfoArray[indexpath.section];
         [sectionInfo replaceObjectInRowHeightsAtIndex:indexpath.row withObject:@(newHeight)];
-        
         
         BOOL animationEnabled = [UIView areAnimationsEnabled];
         [UIView setAnimationsEnabled:NO];

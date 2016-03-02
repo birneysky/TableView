@@ -72,7 +72,7 @@
                     <navigationItem key="navigationItem" id="Z6m-6N-dus">
                         <barButtonItem key="rightBarButtonItem" systemItem="organize" id="mq9-yt-SyN">
                             <connections>
-                                <segue destination="PuM-RU-yYl" kind="show" id="H5U-zL-46H"/>
+                                <segue destination="PuM-RU-yYl" kind="show" id="Q6u-Gq-Q7t"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -119,10 +119,48 @@
                             <constraint firstItem="Ifu-zd-Hgc" firstAttribute="top" secondItem="ywb-2K-ksd" secondAttribute="bottom" constant="17" id="yqf-j7-goA"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="bcb-cA-dJH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vc1-Ec-8a1">
+                            <connections>
+                                <segue destination="mNj-Rm-6fT" kind="show" id="iwn-f4-7yI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omG-DG-jq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1963" y="564"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yHb-fI-QOb">
+            <objects>
+                <viewController id="mNj-Rm-6fT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5H2-7w-4dZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="hds-RI-5dd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QEP-pb-FkH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="e4r-v3-qHx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="hDq-d9-uNO"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qLm-h1-40W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" id="gmx-PK-z9O">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image2" id="Ole-EP-aIN">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <barButtonItem title="Item" id="8ld-eN-pfg"/>
+                <barButtonItem title="Item" id="Fbp-IT-TyO"/>
+            </objects>
+            <point key="canvasLocation" x="2645" y="564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LMa-KE-sJV">
@@ -143,4 +181,8 @@
             <point key="canvasLocation" x="491" y="564"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image1" width="320" height="436"/>
+        <image name="image2" width="320" height="436"/>
+    </resources>
 </document>

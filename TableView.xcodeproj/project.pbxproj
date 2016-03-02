@@ -23,6 +23,7 @@
 		DB3981F71C842DCC001DDD65 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB3981F61C842DCC001DDD65 /* SectionHeaderView.xib */; };
 		DB3981FA1C8434C1001DDD65 /* LCSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981F91C8434C1001DDD65 /* LCSectionInfo.m */; };
 		DB3981FD1C8441D8001DDD65 /* LCQuoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981FC1C8441D8001DDD65 /* LCQuoteCell.m */; };
+		DB3982001C86C3D8001DDD65 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981FF1C86C3D8001DDD65 /* PlayViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		DB3981F91C8434C1001DDD65 /* LCSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSectionInfo.m; sourceTree = "<group>"; };
 		DB3981FB1C8441D8001DDD65 /* LCQuoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCQuoteCell.h; sourceTree = "<group>"; };
 		DB3981FC1C8441D8001DDD65 /* LCQuoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCQuoteCell.m; sourceTree = "<group>"; };
+		DB3981FE1C86C3D8001DDD65 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		DB3981FF1C86C3D8001DDD65 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +185,8 @@
 			children = (
 				DB3981EE1C841ED2001DDD65 /* LCTableViewController.h */,
 				DB3981EF1C841ED2001DDD65 /* LCTableViewController.m */,
+				DB3981FE1C86C3D8001DDD65 /* PlayViewController.h */,
+				DB3981FF1C86C3D8001DDD65 /* PlayViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				DB3981B71C84156C001DDD65 /* AppDelegate.m in Sources */,
 				DB3981F51C842D9E001DDD65 /* LCSectionHeaderView.m in Sources */,
 				DB3981B41C84156C001DDD65 /* main.m in Sources */,
+				DB3982001C86C3D8001DDD65 /* PlayViewController.m in Sources */,
 				DB3981ED1C841D59001DDD65 /* LCQuotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
