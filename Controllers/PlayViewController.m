@@ -76,13 +76,13 @@
         toView = self.frontView;
     }
 
-    
+     NSArray *priorConstraints = self.priorConstraints;
     [UIView transitionFromView:fromView
                         toView:toView
                       duration:1.0
                        options:options
                     completion:^(BOOL finished) {
-        [self.view removeConstraints:_priorConstraints];
+        [self.view removeConstraints:priorConstraints];
     }];
     _priorConstraints = [self constrainSubView:toView toMathSuperView:self.view];
 }
@@ -93,5 +93,9 @@
     [self performTransition:UIViewAnimationOptionTransitionCrossDissolve];
 }
 
+- (IBAction)flipBtnClicked:(id)sender {
+    UIViewAnimationOptions options = [self.frontView superview] ? UIViewAnimationOptionTransitionFlipFromLeft : UIViewAnimationOptionTransitionFlipFromRight;
+    [self performTransition:options];
+}
 
 @end

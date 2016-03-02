@@ -169,7 +169,11 @@
                         <action selector="fateBtnClicked:" destination="mNj-Rm-6fT" id="95v-PK-Q1o"/>
                     </connections>
                 </barButtonItem>
-                <barButtonItem title="Flip" id="Fbp-IT-TyO"/>
+                <barButtonItem title="Flip" id="Fbp-IT-TyO">
+                    <connections>
+                        <action selector="flipBtnClicked:" destination="mNj-Rm-6fT" id="qI2-i8-Wgw"/>
+                    </connections>
+                </barButtonItem>
                 <barButtonItem title="Bounce" id="fy4-Va-qty"/>
             </objects>
             <point key="canvasLocation" x="2645" y="564"/>
