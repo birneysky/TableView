@@ -149,24 +149,28 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backView" destination="Ole-EP-aIN" id="tvt-i7-eVH"/>
-                        <outlet property="bounceButton" destination="Fbp-IT-TyO" id="zRP-uQ-fZL"/>
-                        <outlet property="fadeButton" destination="8ld-eN-pfg" id="TPJ-ix-2NM"/>
-                        <outlet property="flipButton" destination="Fbp-IT-TyO" id="t8g-xN-hHc"/>
+                        <outlet property="bounceButton" destination="fy4-Va-qty" id="ePY-cN-jUl"/>
+                        <outlet property="fadeButton" destination="8ld-eN-pfg" id="kM4-QG-v3X"/>
+                        <outlet property="flipButton" destination="Fbp-IT-TyO" id="yhG-h5-0qw"/>
                         <outlet property="frontView" destination="gmx-PK-z9O" id="7sw-3d-OlL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLm-h1-40W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" id="gmx-PK-z9O">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" id="gmx-PK-z9O">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image2" id="Ole-EP-aIN">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image2" id="Ole-EP-aIN">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <barButtonItem title="Item" id="8ld-eN-pfg"/>
-                <barButtonItem title="Item" id="Fbp-IT-TyO"/>
-                <barButtonItem title="Item" id="fy4-Va-qty"/>
+                <barButtonItem title="Dissolve" id="8ld-eN-pfg">
+                    <connections>
+                        <action selector="fateBtnClicked:" destination="mNj-Rm-6fT" id="95v-PK-Q1o"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem title="Flip" id="Fbp-IT-TyO"/>
+                <barButtonItem title="Bounce" id="fy4-Va-qty"/>
             </objects>
             <point key="canvasLocation" x="2645" y="564"/>
         </scene>
@@ -180,6 +184,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="cDq-wU-w7p">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="efY-a0-ad0" kind="relationship" relationship="rootViewController" id="Xcc-Q1-Q0u"/>
                     </connections>
