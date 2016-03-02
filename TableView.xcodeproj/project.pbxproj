@@ -169,8 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				DB3981F31C842D9E001DDD65 /* LCSectionHeaderView.h */,
-				DB3981F41C842D9E001DDD65 /* LCSectionHeaderView.m */,
 				DB3981F61C842DCC001DDD65 /* SectionHeaderView.xib */,
+				DB3981F41C842D9E001DDD65 /* LCSectionHeaderView.m */,
 				DB3981FB1C8441D8001DDD65 /* LCQuoteCell.h */,
 				DB3981FC1C8441D8001DDD65 /* LCQuoteCell.m */,
 			);

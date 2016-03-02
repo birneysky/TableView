@@ -12,6 +12,7 @@
 #import "LCSectionInfo.h"
 #import "LCQuoteCell.h"
 #import "LCSectionHeaderView.h"
+#import <MessageUI/MessageUI.h>
 
 
 @interface LCTableViewController () <LCSectionHeaderViewDelegate>
@@ -129,6 +130,16 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
     LCSectionInfo* sectionInfo = [self.sectionInfoArray objectAtIndex:indexPath.section];
     
     cell.quotation = sectionInfo.play.quotations[indexPath.row];
+    
+    if ([MFMailComposeViewController canSendMail]) {
+        if (!cell.longPressRecognizer) {
+            UILongPressGestureRecognizer* lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+            cell.longPressRecognizer = lpgr;
+        }
+    }
+    else{
+        cell.longPressRecognizer = nil;
+    }
     
     return cell;
 }
@@ -262,6 +273,46 @@ static NSString *SectionHeaderViewIdentifier = @"SectionHeaderViewIdentifier";
         [self.tableView endUpdates];
         [UIView setAnimationsEnabled:animationEnabled];
     }
+}
+
+- (void)handleLongPress:(UILongPressGestureRecognizer*)gesture
+{
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+       
+        NSIndexPath* pressedIndexPath = [self.tableView indexPathForRowAtPoint:[gesture locationInView:self.tableView]];
+        if (pressedIndexPath && pressedIndexPath.row != NSNotFound && pressedIndexPath.row != NSNotFound) {
+            //UIMenuController 不显示是应为，self ，或者cell  拒绝成为第一响应者。重写self或者cell的canBecomeFirstResponder方法，返回YES；
+            //，还要重写canPerformAction：withSender:
+            [self becomeFirstResponder];
+            CGRect cellRect = [self.tableView rectForRowAtIndexPath:pressedIndexPath];
+            NSString* emailTitle = NSLocalizedString(@"Email", nil);
+            UIMenuItem* menuItem = [[UIMenuItem alloc] initWithTitle:@"email" action:@selector(emailMenuButtonPressed:)];
+            UIMenuController* mc = [UIMenuController sharedMenuController];
+            mc.menuItems = @[menuItem];
+            
+            cellRect.origin.y += 40;
+            [mc setTargetRect:cellRect inView:self.tableView];
+            [mc setMenuVisible:YES animated:YES];
+            
+        }
+    }
+}
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+    if (action == @selector(emailMenuButtonPressed:) ){
+        return YES;
+    }
+    return NO;
+}
+#pragma mark - *** MenuItem Action***
+- (void)emailMenuButtonPressed:(UIMenuItem*)item
+{
+    
 }
 
 @end
