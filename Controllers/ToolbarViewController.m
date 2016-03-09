@@ -36,7 +36,7 @@
     //self.toolbarHeightConstraint.constant = 60;
     //self.toolbarBottomConstraint.constant = 255;
     //self.bottomView.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-    [self.bottomView addSubview:self.effectView];
+    //[self.bottomView addSubview:self.effectView];
     //
 }
 
