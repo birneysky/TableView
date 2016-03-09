@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lMl-DQ-zbM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lMl-DQ-zbM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -19,10 +19,10 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OZk-Hn-Y0F" id="pCu-jy-CrO">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="87"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="87.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXr-vB-tQa">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXr-vB-tQa">
                                             <rect key="frame" x="565" y="10" width="27" height="13"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="13" id="1pu-Fc-vNJ"/>
@@ -31,13 +31,13 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Character" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioi-T7-o8U">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Character" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioi-T7-o8U">
                                             <rect key="frame" x="8" y="8" width="549" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="lallalalala" translatesAutoresizingMaskIntoConstraints="NO" id="aFx-03-WhO">
+                                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="lallalalala" translatesAutoresizingMaskIntoConstraints="NO" id="aFx-03-WhO">
                                             <rect key="frame" x="8" y="33" width="584" height="46"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -145,7 +145,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="e4r-v3-qHx">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="hDq-d9-uNO"/>
+                        <barButtonItem key="rightBarButtonItem" title="next" id="hDq-d9-uNO">
+                            <connections>
+                                <segue destination="qu9-mC-S0Y" kind="push" id="e8W-Pp-bwg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="backView" destination="Ole-EP-aIN" id="tvt-i7-eVH"/>
@@ -181,6 +185,44 @@
                 </barButtonItem>
             </objects>
             <point key="canvasLocation" x="2645" y="564"/>
+        </scene>
+        <!--Toolbar View Controller-->
+        <scene sceneID="TjZ-Oz-hks">
+            <objects>
+                <viewController id="qu9-mC-S0Y" customClass="ToolbarViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KC6-Ti-kb2"/>
+                        <viewControllerLayoutGuide type="bottom" id="rTS-JJ-80q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jC3-dR-sSb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAT-QG-Oew">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="jwS-Dx-btL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.062656876020000002" green="0.57175268310000005" blue="0.21368858800000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="JAT-QG-Oew" firstAttribute="leading" secondItem="jC3-dR-sSb" secondAttribute="leading" id="Adc-n3-MyL"/>
+                            <constraint firstItem="rTS-JJ-80q" firstAttribute="top" secondItem="JAT-QG-Oew" secondAttribute="bottom" id="YS2-b1-O3y"/>
+                            <constraint firstAttribute="trailing" secondItem="JAT-QG-Oew" secondAttribute="trailing" id="ftt-r4-oJt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oAC-As-hFk"/>
+                    <connections>
+                        <outlet property="bottomView" destination="JAT-QG-Oew" id="6o7-uC-4x7"/>
+                        <outlet property="toolbarBottomConstraint" destination="YS2-b1-O3y" id="Daq-qD-FTh"/>
+                        <outlet property="toolbarHeightConstraint" destination="jwS-Dx-btL" id="GkL-WU-Nu1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EI6-3o-Cb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3361" y="564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LMa-KE-sJV">
