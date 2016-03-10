@@ -8,48 +8,91 @@
 
 #import "ToolbarViewController.h"
 
-@interface ToolbarViewController ()
-@property (weak, nonatomic) IBOutlet UIView *bottomView;
+@interface ToolbarViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIVisualEffectView *bottomView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarBottomConstraint;
 
 @property (nonatomic,strong) UIVisualEffectView* effectView;
 
+@property (weak, nonatomic) IBOutlet UITextView *textview;
+
+@property (strong,nonatomic) NSMutableArray* arraySource;
 
 @end
 
 @implementation ToolbarViewController
 
+- (NSMutableArray*)arraySource
+{
+    if (!_arraySource) {
+        _arraySource = [[NSMutableArray alloc] initWithCapacity:100];
+        for ( int i = 0; i < 100; i++) {
+            [_arraySource addObject:[NSString stringWithFormat:@"%d",i]];
+        }
+    }
+    
+    return _arraySource;
+}
+
 - (UIVisualEffectView*)effectView
 {
     if (!_effectView) {
         _effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
-        _effectView.alpha = 0.5;
+        //_effectView.backgroundColor = [UIColor greenColor];
+       // _effectView.alpha = 0.5;
     }
     return _effectView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+
     // Do any additional setup after loading the view.
     //self.toolbarHeightConstraint.constant = 60;
     //self.toolbarBottomConstraint.constant = 255;
     //self.bottomView.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     //[self.bottomView addSubview:self.effectView];
+    //[self.bottomView insertSubview:self.effectView belowSubview:self.textview];
     //
+    //self.effectView.frame = CGRectMake(0, self.view.frame.size.height - 44, self.view.frame.size.width, 44);
+    //self.effectView.layer.borderColor = [UIColor blackColor].CGColor;
+    //self.effectView.layer.borderWidth = 1.0f;
+    
+    //[self.bottomView addSubview:self.effectView];
+    //[self.view addSubview:self.effectView];
+//    self.bottomView.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+//    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 21)];
+//    label.backgroundColor = [UIColor whiteColor];
+//    label.text = @"xxxxxxxxx";
+//    [self.bottomView addSubview:label];
+    self.textview.textContainerInset = UIEdgeInsetsMake(6, 0, 4, 0);
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+    //[self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+//    [UIView animateWithDuration:0.25 animations:^{
+//        self.toolbarBottomConstraint.constant = 60.0f;
+//        [self.view layoutIfNeeded];
+//    }];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.textview resignFirstResponder];
+}
+
 
 
 #pragma mark - notification selector
@@ -71,8 +114,9 @@
     [UIView setAnimationDelegate:self];
     
     // set views with new info
-    self.bottomView.frame = bottomFrame;
-    //self.bottomViewSuperViewVerticalSpaceConstraint.constant = keyboardRect.size.height ;
+    //self.bottomView.frame = bottomFrame;
+    self.toolbarBottomConstraint.constant = keyboardRect.size.height ;
+    [self.view layoutIfNeeded];
     // commit animations
     [UIView commitAnimations];
     
@@ -93,7 +137,9 @@
     [UIView setAnimationDuration:[duration doubleValue]];
     [UIView setAnimationCurve:[curve intValue]];
     [UIView setAnimationDelegate:self];
-    self.bottomView.frame = bottomFram;
+    //self.bottomView.frame = bottomFram;
+    self.toolbarBottomConstraint.constant = 0 ;
+    [self.view layoutIfNeeded];
     [UIView commitAnimations];
 }
 
@@ -109,6 +155,33 @@
     {
         return YES;
     }
+}
+
+-(UIColor*)randomColor
+{
+    switch (arc4random() % 5) {
+        case 0:return [UIColor greenColor];
+        case 1:return [UIColor blueColor];
+        case 2:return [UIColor orangeColor];
+        case 3:return [UIColor redColor];
+        case 4:return [UIColor purpleColor];
+    }
+    return [UIColor blackColor];
+}
+
+#pragma mark - *** Tableview Data Source***
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.arraySource.count;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"hello"];
+    cell.textLabel.text = self.arraySource[indexPath.row];
+    cell.backgroundColor = [self randomColor];
+    return cell;
 }
 
 /*

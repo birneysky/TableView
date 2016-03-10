@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		74B072741C9058BB00C7604B /* ToolbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B072731C9058BB00C7604B /* ToolbarViewController.m */; };
+		74B072781C91A2C300C7604B /* CALayer+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B072771C91A2C300C7604B /* CALayer+Additions.m */; };
 		DB3981B41C84156C001DDD65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981B31C84156C001DDD65 /* main.m */; };
 		DB3981B71C84156C001DDD65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981B61C84156C001DDD65 /* AppDelegate.m */; };
 		DB3981BA1C84156C001DDD65 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981B91C84156C001DDD65 /* ViewController.m */; };
@@ -47,6 +48,8 @@
 /* Begin PBXFileReference section */
 		74B072721C9058BB00C7604B /* ToolbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarViewController.h; sourceTree = "<group>"; };
 		74B072731C9058BB00C7604B /* ToolbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarViewController.m; sourceTree = "<group>"; };
+		74B072761C91A2C300C7604B /* CALayer+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Additions.h"; sourceTree = "<group>"; };
+		74B072771C91A2C300C7604B /* CALayer+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Additions.m"; sourceTree = "<group>"; };
 		DB3981AF1C84156C001DDD65 /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB3981B31C84156C001DDD65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DB3981B51C84156C001DDD65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -106,9 +109,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74B072751C91A2C300C7604B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				74B072761C91A2C300C7604B /* CALayer+Additions.h */,
+				74B072771C91A2C300C7604B /* CALayer+Additions.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		DB3981A61C84156C001DDD65 = {
 			isa = PBXGroup;
 			children = (
+				74B072751C91A2C300C7604B /* Category */,
 				DB3981E51C841C8C001DDD65 /* Cells */,
 				DB3981E61C841C8C001DDD65 /* Controllers */,
 				DB3981E71C841C8C001DDD65 /* Models */,
@@ -347,6 +360,7 @@
 				DB3981EA1C841CFE001DDD65 /* LCPlay.m in Sources */,
 				DB3981FA1C8434C1001DDD65 /* LCSectionInfo.m in Sources */,
 				74B072741C9058BB00C7604B /* ToolbarViewController.m in Sources */,
+				74B072781C91A2C300C7604B /* CALayer+Additions.m in Sources */,
 				DB3981BA1C84156C001DDD65 /* ViewController.m in Sources */,
 				DB3981B71C84156C001DDD65 /* AppDelegate.m in Sources */,
 				DB3981F51C842D9E001DDD65 /* LCSectionHeaderView.m in Sources */,
