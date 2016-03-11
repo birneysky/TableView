@@ -49,7 +49,7 @@
     
     _priorConstraints = [self constrainSubView:self.frontView toMathSuperView:self.view];
     
-    self.navigationController.toolbarHidden = NO;
+    
     UIBarButtonItem*  barButtomItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                                     target:nil
                                                                                     action:nil];
@@ -60,6 +60,12 @@
 {
     [super viewWillDisappear:animated];
     self.navigationController.toolbarHidden = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.toolbarHidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
