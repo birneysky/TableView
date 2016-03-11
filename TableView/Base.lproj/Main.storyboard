@@ -210,6 +210,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K7f-JU-eWW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="rect" keyPath="contentInset">
+                                        <rect key="value" x="0.0" y="0.0" width="44" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="qu9-mC-S0Y" id="NTH-kb-GMy"/>
                                     <outlet property="delegate" destination="qu9-mC-S0Y" id="dDr-dZ-BtF"/>
@@ -313,6 +318,7 @@
                     <navigationItem key="navigationItem" id="oAC-As-hFk"/>
                     <connections>
                         <outlet property="bottomView" destination="JJa-Ji-yx7" id="drC-bn-DmW"/>
+                        <outlet property="tableview" destination="K7f-JU-eWW" id="GFt-Ra-NBi"/>
                         <outlet property="textview" destination="eJn-iH-fe8" id="Sev-Cy-KNc"/>
                         <outlet property="toolbarBottomConstraint" destination="htQ-xf-D8a" id="aV4-sy-gG5"/>
                     </connections>

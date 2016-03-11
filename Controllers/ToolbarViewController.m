@@ -20,6 +20,7 @@
 
 @property (strong,nonatomic) NSMutableArray* arraySource;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
 @end
 
 @implementation ToolbarViewController
@@ -50,25 +51,6 @@
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-
-    // Do any additional setup after loading the view.
-    //self.toolbarHeightConstraint.constant = 60;
-    //self.toolbarBottomConstraint.constant = 255;
-    //self.bottomView.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-    //[self.bottomView addSubview:self.effectView];
-    //[self.bottomView insertSubview:self.effectView belowSubview:self.textview];
-    //
-    //self.effectView.frame = CGRectMake(0, self.view.frame.size.height - 44, self.view.frame.size.width, 44);
-    //self.effectView.layer.borderColor = [UIColor blackColor].CGColor;
-    //self.effectView.layer.borderWidth = 1.0f;
-    
-    //[self.bottomView addSubview:self.effectView];
-    //[self.view addSubview:self.effectView];
-//    self.bottomView.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-//    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 21)];
-//    label.backgroundColor = [UIColor whiteColor];
-//    label.text = @"xxxxxxxxx";
-//    [self.bottomView addSubview:label];
     self.textview.textContainerInset = UIEdgeInsetsMake(6, 0, 4, 0);
 }
 
@@ -182,6 +164,11 @@
     cell.textLabel.text = self.arraySource[indexPath.row];
     cell.backgroundColor = [self randomColor];
     return cell;
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+     [self.textview resignFirstResponder];
 }
 
 /*
