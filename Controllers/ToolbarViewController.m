@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarBottomConstraint;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewBottomConstraint;
 @property (nonatomic,strong) UIVisualEffectView* effectView;
 
 @property (weak, nonatomic) IBOutlet UITextView *textview;
@@ -52,6 +53,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     self.textview.textContainerInset = UIEdgeInsetsMake(6, 0, 4, 0);
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -60,7 +62,7 @@
     //[self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
     
 //    [UIView animateWithDuration:0.25 animations:^{
-//        self.toolbarBottomConstraint.constant = 60.0f;
+//        self.tableViewBottomConstraint.constant = 258;
 //        [self.view layoutIfNeeded];
 //    }];
 
@@ -98,10 +100,13 @@
     // set views with new info
     //self.bottomView.frame = bottomFrame;
     self.toolbarBottomConstraint.constant = keyboardRect.size.height ;
+    self.tableViewBottomConstraint.constant = keyboardRect.size.height;
     [self.view layoutIfNeeded];
+    //[self.tableview layoutIfNeeded];
     // commit animations
     [UIView commitAnimations];
     
+    [self.tableview scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.arraySource.count -1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     //[self.bottomView setNeedsUpdateConstraints];
     
 }
@@ -121,6 +126,7 @@
     [UIView setAnimationDelegate:self];
     //self.bottomView.frame = bottomFram;
     self.toolbarBottomConstraint.constant = 0 ;
+    self.tableViewBottomConstraint.constant = 0;
     [self.view layoutIfNeeded];
     [UIView commitAnimations];
 }
