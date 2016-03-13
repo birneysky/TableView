@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="1303" y="564"/>
         </scene>
-        <!--View Controller-->
+        <!--Test View Controller-->
         <scene sceneID="H4G-Sa-LlL">
             <objects>
-                <viewController id="PuM-RU-yYl" sceneMemberID="viewController">
+                <viewController id="PuM-RU-yYl" customClass="TestViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ywb-2K-ksd"/>
                         <viewControllerLayoutGuide type="bottom" id="tJe-HM-TXX"/>
