@@ -27,6 +27,7 @@
 		DB3981FA1C8434C1001DDD65 /* LCSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981F91C8434C1001DDD65 /* LCSectionInfo.m */; };
 		DB3981FD1C8441D8001DDD65 /* LCQuoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981FC1C8441D8001DDD65 /* LCQuoteCell.m */; };
 		DB3982001C86C3D8001DDD65 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981FF1C86C3D8001DDD65 /* PlayViewController.m */; };
+		DB5ADF221C96AE12004D83FD /* LCMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5ADF211C96AE12004D83FD /* LCMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		DB3981FC1C8441D8001DDD65 /* LCQuoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCQuoteCell.m; sourceTree = "<group>"; };
 		DB3981FE1C86C3D8001DDD65 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
 		DB3981FF1C86C3D8001DDD65 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
+		DB5ADF201C96AE12004D83FD /* LCMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMenu.h; sourceTree = "<group>"; };
+		DB5ADF211C96AE12004D83FD /* LCMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,7 @@
 		DB3981A61C84156C001DDD65 = {
 			isa = PBXGroup;
 			children = (
+				DB5ADF1F1C96ADA0004D83FD /* View */,
 				74B072751C91A2C300C7604B /* Category */,
 				DB3981E51C841C8C001DDD65 /* Cells */,
 				DB3981E61C841C8C001DDD65 /* Controllers */,
@@ -226,6 +230,15 @@
 				DB3981F91C8434C1001DDD65 /* LCSectionInfo.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DB5ADF1F1C96ADA0004D83FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB5ADF201C96AE12004D83FD /* LCMenu.h */,
+				DB5ADF211C96AE12004D83FD /* LCMenu.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +386,7 @@
 				DB3981B41C84156C001DDD65 /* main.m in Sources */,
 				DB3982001C86C3D8001DDD65 /* PlayViewController.m in Sources */,
 				DB3981ED1C841D59001DDD65 /* LCQuotation.m in Sources */,
+				DB5ADF221C96AE12004D83FD /* LCMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

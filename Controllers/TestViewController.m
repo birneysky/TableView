@@ -7,6 +7,7 @@
 //
 
 #import "TestViewController.h"
+#import "LCMenu.h"
 
 @interface TestViewController ()
 
@@ -16,9 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
     
     UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1"]];
     
@@ -39,6 +37,9 @@
     imageViewMask.frame = CGRectInset(imageView.bounds, 0.0f, 0.0f);
     NSLog(@"imageView Mask = %@",NSStringFromCGRect(imageViewMask.frame));
     imageView.layer.mask = imageViewMask.layer;
+    
+    //LCMenu* menu = [[LCMenu alloc] initWithFrame:CGRectMake(20, 500, 30, 30)];
+  
 }
 
 - (void)didReceiveMemoryWarning {
