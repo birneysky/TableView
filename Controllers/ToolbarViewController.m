@@ -11,17 +11,14 @@
 @interface ToolbarViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIVisualEffectView *bottomView;
+@property (weak, nonatomic) IBOutlet UITextView *textview;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarBottomConstraint;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewBottomConstraint;
-@property (nonatomic,strong) UIVisualEffectView* effectView;
-
-@property (weak, nonatomic) IBOutlet UITextView *textview;
 
 @property (strong,nonatomic) NSMutableArray* arraySource;
-
-@property (weak, nonatomic) IBOutlet UITableView *tableview;
 @end
 
 @implementation ToolbarViewController
@@ -38,15 +35,6 @@
     return _arraySource;
 }
 
-- (UIVisualEffectView*)effectView
-{
-    if (!_effectView) {
-        _effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
-        //_effectView.backgroundColor = [UIColor greenColor];
-       // _effectView.alpha = 0.5;
-    }
-    return _effectView;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -77,7 +65,21 @@
     [self.textview resignFirstResponder];
 }
 
+#pragma mark - *** Helper ***
+- (void)updateBottomViewStateWithPanelHeight:(CGFloat)height
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:0.25f];
+    [UIView setAnimationCurve:7];
+    [UIView setAnimationDelegate:self];
+    //self.bottomView.frame = bottomFram;
+    self.toolbarBottomConstraint.constant = 0 ;
+    self.tableViewBottomConstraint.constant = 0;
+    [self.view layoutIfNeeded];
+    [UIView commitAnimations];
 
+}
 
 #pragma mark - notification selector
 - (void)keyboardWillShow:(NSNotification*)notification
@@ -94,7 +96,7 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:[duration doubleValue]];
-    [UIView setAnimationCurve:[curve intValue]];
+    [UIView setAnimationCurve:[curve unsignedIntegerValue]];
     [UIView setAnimationDelegate:self];
     
     // set views with new info
@@ -109,6 +111,7 @@
     [self.tableview scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.arraySource.count -1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     //[self.bottomView setNeedsUpdateConstraints];
     
+    
 }
 
 - (void)keyboardWillHide:(NSNotification*)notification
@@ -122,13 +125,14 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:[duration doubleValue]];
-    [UIView setAnimationCurve:[curve intValue]];
+    [UIView setAnimationCurve:[curve unsignedIntegerValue]];
     [UIView setAnimationDelegate:self];
     //self.bottomView.frame = bottomFram;
     self.toolbarBottomConstraint.constant = 0 ;
     self.tableViewBottomConstraint.constant = 0;
     [self.view layoutIfNeeded];
     [UIView commitAnimations];
+    
 }
 
 #pragma mark - text delegate
