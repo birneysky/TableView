@@ -27,6 +27,7 @@
 		DB3981FA1C8434C1001DDD65 /* LCSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981F91C8434C1001DDD65 /* LCSectionInfo.m */; };
 		DB3981FD1C8441D8001DDD65 /* LCQuoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981FC1C8441D8001DDD65 /* LCQuoteCell.m */; };
 		DB3982001C86C3D8001DDD65 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3981FF1C86C3D8001DDD65 /* PlayViewController.m */; };
+		DB4CA0AF1CA3C8A400A08598 /* MultipleSelectionEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA0AE1CA3C8A400A08598 /* MultipleSelectionEditTableViewController.m */; };
 		DB5ADF221C96AE12004D83FD /* LCMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5ADF211C96AE12004D83FD /* LCMenu.m */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,8 @@
 		DB3981FC1C8441D8001DDD65 /* LCQuoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCQuoteCell.m; sourceTree = "<group>"; };
 		DB3981FE1C86C3D8001DDD65 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
 		DB3981FF1C86C3D8001DDD65 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
+		DB4CA0AD1CA3C8A400A08598 /* MultipleSelectionEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleSelectionEditTableViewController.h; sourceTree = "<group>"; };
+		DB4CA0AE1CA3C8A400A08598 /* MultipleSelectionEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleSelectionEditTableViewController.m; sourceTree = "<group>"; };
 		DB5ADF201C96AE12004D83FD /* LCMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMenu.h; sourceTree = "<group>"; };
 		DB5ADF211C96AE12004D83FD /* LCMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,6 +217,8 @@
 				74B072731C9058BB00C7604B /* ToolbarViewController.m */,
 				74E0110E1C951A7E00F897E0 /* TestViewController.h */,
 				74E0110F1C951A7E00F897E0 /* TestViewController.m */,
+				DB4CA0AD1CA3C8A400A08598 /* MultipleSelectionEditTableViewController.h */,
+				DB4CA0AE1CA3C8A400A08598 /* MultipleSelectionEditTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 			files = (
 				DB3981FD1C8441D8001DDD65 /* LCQuoteCell.m in Sources */,
 				74E011101C951A7E00F897E0 /* TestViewController.m in Sources */,
+				DB4CA0AF1CA3C8A400A08598 /* MultipleSelectionEditTableViewController.m in Sources */,
 				DB3981F01C841ED2001DDD65 /* LCTableViewController.m in Sources */,
 				DB3981EA1C841CFE001DDD65 /* LCPlay.m in Sources */,
 				DB3981FA1C8434C1001DDD65 /* LCSectionInfo.m in Sources */,
@@ -529,8 +535,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.TableView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yy.H264;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d2a4ac45-b3d7-483c-9965-b352d55724e7";
 			};
 			name = Debug;
 		};
@@ -540,8 +547,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.TableView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yy.H264;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d2a4ac45-b3d7-483c-9965-b352d55724e7";
 			};
 			name = Release;
 		};
