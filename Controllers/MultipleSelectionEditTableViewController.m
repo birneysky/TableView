@@ -110,6 +110,7 @@
             [indexSets addIndex:index];
             [array addObject:[NSIndexPath indexPathForRow:index inSection:0]];
         }
+        [self.deleteSet removeAllObjects];
         [self.arraySource removeObjectsAtIndexes:[indexSets copy]];
         [self.tableView deleteRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationLeft];
         
