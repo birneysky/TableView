@@ -407,7 +407,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsD-no-QM0" customClass="FlowerTransformView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsD-no-QM0" customClass="GraphView">
                                 <rect key="frame" x="20" y="72" width="560" height="215"/>
                                 <color key="backgroundColor" red="0.083725895810000006" green="0.78553109219999995" blue="0.29008639520000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
