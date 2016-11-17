@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7456F6841CB124BC00EBE931 /* FlowerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7456F6831CB124BC00EBE931 /* FlowerView.m */; };
+		74989FD81CBE8F7D008E128E /* FlowerTransformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74989FD71CBE8F7D008E128E /* FlowerTransformView.m */; };
+		74989FDB1CBFD703008E128E /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74989FDA1CBFD703008E128E /* GraphView.m */; };
 		74B072741C9058BB00C7604B /* ToolbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B072731C9058BB00C7604B /* ToolbarViewController.m */; };
 		74B072781C91A2C300C7604B /* CALayer+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B072771C91A2C300C7604B /* CALayer+Additions.m */; };
 		74E011101C951A7E00F897E0 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E0110F1C951A7E00F897E0 /* TestViewController.m */; };
@@ -52,6 +54,10 @@
 /* Begin PBXFileReference section */
 		7456F6821CB124BC00EBE931 /* FlowerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowerView.h; sourceTree = "<group>"; };
 		7456F6831CB124BC00EBE931 /* FlowerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowerView.m; sourceTree = "<group>"; };
+		74989FD61CBE8F7D008E128E /* FlowerTransformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowerTransformView.h; sourceTree = "<group>"; };
+		74989FD71CBE8F7D008E128E /* FlowerTransformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowerTransformView.m; sourceTree = "<group>"; };
+		74989FD91CBFD703008E128E /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		74989FDA1CBFD703008E128E /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
 		74B072721C9058BB00C7604B /* ToolbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarViewController.h; sourceTree = "<group>"; };
 		74B072731C9058BB00C7604B /* ToolbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarViewController.m; sourceTree = "<group>"; };
 		74B072761C91A2C300C7604B /* CALayer+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Additions.h"; sourceTree = "<group>"; };
@@ -247,6 +253,10 @@
 				DB5ADF211C96AE12004D83FD /* LCMenu.m */,
 				7456F6821CB124BC00EBE931 /* FlowerView.h */,
 				7456F6831CB124BC00EBE931 /* FlowerView.m */,
+				74989FD61CBE8F7D008E128E /* FlowerTransformView.h */,
+				74989FD71CBE8F7D008E128E /* FlowerTransformView.m */,
+				74989FD91CBFD703008E128E /* GraphView.h */,
+				74989FDA1CBFD703008E128E /* GraphView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,6 +397,7 @@
 				DB3981FD1C8441D8001DDD65 /* LCQuoteCell.m in Sources */,
 				7456F6841CB124BC00EBE931 /* FlowerView.m in Sources */,
 				74E011101C951A7E00F897E0 /* TestViewController.m in Sources */,
+				74989FDB1CBFD703008E128E /* GraphView.m in Sources */,
 				DB4CA0AF1CA3C8A400A08598 /* MultipleSelectionEditTableViewController.m in Sources */,
 				DB3981F01C841ED2001DDD65 /* LCTableViewController.m in Sources */,
 				DB3981EA1C841CFE001DDD65 /* LCPlay.m in Sources */,
@@ -397,6 +408,7 @@
 				DB3981B71C84156C001DDD65 /* AppDelegate.m in Sources */,
 				DB3981F51C842D9E001DDD65 /* LCSectionHeaderView.m in Sources */,
 				DB3981B41C84156C001DDD65 /* main.m in Sources */,
+				74989FD81CBE8F7D008E128E /* FlowerTransformView.m in Sources */,
 				DB3982001C86C3D8001DDD65 /* PlayViewController.m in Sources */,
 				DB3981ED1C841D59001DDD65 /* LCQuotation.m in Sources */,
 				DB5ADF221C96AE12004D83FD /* LCMenu.m in Sources */,
