@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lMl-DQ-zbM">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
-=======
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lMl-DQ-zbM">
->>>>>>> efb8e1e14ca55db2e4e8a27d66a306b47eec055b
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
@@ -417,15 +413,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SsD-no-QM0" customClass="FlowerView">
-                                <rect key="frame" x="147" y="151" width="240" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.083725895810000006" green="0.78553109219999995" blue="0.29008639520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-=======
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsD-no-QM0" customClass="GraphView">
                                 <rect key="frame" x="20" y="72" width="560" height="215"/>
                                 <color key="backgroundColor" red="0.083725895810000006" green="0.78553109219999995" blue="0.29008639520000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -440,7 +427,6 @@
                             <constraint firstItem="SsD-no-QM0" firstAttribute="leading" secondItem="hO5-nB-MUN" secondAttribute="leading" constant="20" id="LHY-og-mYZ"/>
                             <constraint firstAttribute="trailing" secondItem="SsD-no-QM0" secondAttribute="trailing" constant="20" id="ZnP-N7-lwm"/>
                         </constraints>
->>>>>>> efb8e1e14ca55db2e4e8a27d66a306b47eec055b
                     </view>
                     <navigationItem key="navigationItem" id="XyL-x8-PKh">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="tct-hy-7qk"/>

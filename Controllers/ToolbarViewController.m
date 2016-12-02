@@ -54,6 +54,7 @@
 //        [self.view layoutIfNeeded];
 //    }];
 
+    [self.tableview scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.arraySource.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -179,6 +180,20 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
      [self.textview resignFirstResponder];
+}
+
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    //[self.tableview beginUpdates];
+
+    //[self.tableview endUpdates];
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    [self.arraySource removeObjectsInRange:NSMakeRange(0, 20)];
+    [self.tableview reloadData];
 }
 
 /*
